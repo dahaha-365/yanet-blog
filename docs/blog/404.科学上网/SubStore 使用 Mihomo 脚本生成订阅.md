@@ -1,0 +1,98 @@
+---
+tags:
+  - SubStore
+  - Mihomo
+  - Clash
+title: SubStore 使用 Mihomo 脚本生成订阅
+createTime: 2025/12/29 01:37:05
+permalink: /blog/2ivre320/
+---
+[Mihomo 全局脚本](https://github.com/dahaha-365/YaNet/tree/main/Mihomo)不知不觉公开一年多了，最初是因为机场的策略分组不好用才去研究的，没想到这个小脚本也能获取几百个⭐️。
+
+Mihomo 全局脚本能实现精细化的代理策略，告别机场订阅乱七八糟的分组。下图是 Clash Party 使用后的效果。
+
+![Clash Party 使用效果](https://wechat-mp0766.oss-cn-chengdu.aliyuncs.com/20251230011327927.png)
+
+喜欢的可以到项目 Github 上点个星星。
+
+<RepoCard repo="dahaha-365/YaNet" />
+
+## 更新了什么
+
+1. 重构了执行过程，现在切换订阅速度快了一些
+2. 作用客户端脚本使用起来不方便，顺便改造了一下，现在==支持导入 SubStore，直接从 SubStore 生成订阅链接了=={.important}🎉！
+3. 在 SubStore 使用的时候能通过连接参数，实现更加个性化的定制。
+
+## 在 SubStore 怎么用
+
+### 在文件管理页签中添加一个 Mihomo 配置
+
+![](https://wechat-mp0766.oss-cn-chengdu.aliyuncs.com/20251230224802582.png)
+
+在脚本操作中添加脚本链接，为了下载速度更快，可以使用镜像地址
+
+`https://hk.gh-proxy.org/https://raw.githubusercontent.com/dahaha-365/YaNet/refs/heads/main/Mihomo/global_script.js`
+
+也可以使用 Github 的原始链接：
+
+`https://github.com/dahaha-365/YaNet/raw/refs/heads/main/Mihomo/global_script.js`
+
+![](https://wechat-mp0766.oss-cn-chengdu.aliyuncs.com/20251230225256422.png)
+
+在 SubStore 里使用可以设置参数，使脚本更加个性化，具体的参数可以参考下表
+
+### 参数表
+
+:::: field-group
+
+::: field name="enable" type="boolean" default="true"
+总开关
+:::
+
+::: field name="ruleSet" type="string" default="all"
+代理组（分流规则），可以设置为`apple | microsoft | github | google | openai | spotify | youtube | bahamut | netflix | tiktok | disney | pixiv | hbo | mediaHMT | biliintl | tvb | hulu | primevideo | telegram | line | whatsapp | games | japan | ads`，代理组之间用**半角分号**相隔
+:::
+
+::: field name="regionSet" type="string" default="all"
+代理组（地区分组），可以设置为`HK | US | JP | KR | SG | CN | TW | GB | DE | MY | TK | CA | AU`，代理组之间用**半角分号**相隔
+:::
+
+::: field name="excludeHighPercentage" type="boolean" default="true"
+是否过滤高倍率节点，设置为`true`的话，倍率高于`globalRatioLimit`的节点将会被忽略
+:::
+
+::: field name="globalRatioLimit" type="number" default="2"
+过滤高倍率节点的阈值
+:::
+
+::: field name="skipIps" type="string" default="10.0.0.0/8;100.64.0.0/10;169.254.0.0/16;172.16.0.0/12;192.0.0.0/24;192.168.0.0/16;198.18.0.0/15;FC00::/7;FE80::/10;::1/128"
+应用在`sniffer['skip-src-address']`、`sniffer['skip-dst-address']`、`tun['route-exclude-address']`，在 Clash Party 里，`tun['route-exclude-address']`会被软件设置覆盖
+:::
+
+::: field name="defaultDNS" type="string" default="119.29.29.29;223.5.5.5"
+用作 Mihomo 配置的`default-nameserver`，必须为IP，以半角分号分隔
+:::
+
+::: field name="directDNS" type="string" default="119.29.29.29;223.5.5.5"
+用作 Mihomo 配置的`direct-nameserver`，以半角分号分隔
+:::
+
+::: field name="chinaDNS" type="string" default="https://doh.pub/dns-query;https://dns.alidns.com/dns-query"
+用作 Mihomo 配置的`nameserver`、`proxy-server-nameserver`，和`nameserver-policy`的中国站点策略，以半角分号分隔
+:::
+
+::: field name="foreignDNS" type="string" default="https://dns.google/dns-query;https://dns.adguard-dns.com/dns-query"
+用作 Mihomo 配置`nameserver-policy`的 gfw 站点策略，以半角分号分隔
+:::
+
+::: field name="mode" type="string" default="default"
+可取值为`securest | secure | default | fast | fastest`，影响脚本生成的 DNS 地址，在国内的响应速度排序大概是`securest < secure < default < fast < fastest`，安全性排序和速度排序相反。最终采用的 DNS 会被上面几项设置的值覆盖
+:::
+
+::::
+
+### 生成订阅链接
+
+最后按照下图的操作生成一个分享链接，就可以导入科学上网软件进行订阅了。
+
+![](https://wechat-mp0766.oss-cn-chengdu.aliyuncs.com/20251231022346676.png)
