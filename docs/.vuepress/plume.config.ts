@@ -55,6 +55,11 @@ export async function getPlumeConfig() {
       repoId: 'R_kgDOQwqDaw',
       category: '博客评论',
       categoryId: 'DIC_kwDOQwqDa84C0aW0',
+      mapping: 'title',
+      strict: true,
+      reactionsEnabled: true,
+      lazyLoading: true,
+      inputPosition: 'top',
     },
     markdown: {
       field: true,
