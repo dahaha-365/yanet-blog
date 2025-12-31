@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { ThemeOptions } from 'vuepress-theme-plume'
 
 async function getGithubProfile() {
   return await axios
@@ -18,6 +19,7 @@ export async function getPlumeConfig() {
 
   return {
     logo: '/logo@0.1x.png',
+    hostname: 'https://yanet.vip',
     profile: {
       avatar: `/avatar.png`,
       name: profile.name,
@@ -27,7 +29,16 @@ export async function getPlumeConfig() {
     changelog: true,
     plugins: {
       // 如果您在此处直接声明为 true，则表示开发环境和生产环境都启用该功能
-      git: process.env.NODE_ENV === 'production'
+      git: process.env.NODE_ENV === 'production',
+      seo: {
+        author: {
+          name: profile.name,
+          url: profile.html_url,
+        }
+      },
+      sitemap: {
+        hostname: 'https://yanet.vip',
+      }
     },
     copyright: 'CC-BY-SA-4.0',
     comment: {
@@ -66,5 +77,5 @@ export async function getPlumeConfig() {
         title: '逛逛Github',
       },
     ],
-  }
+  } satisfies ThemeOptions
 }
