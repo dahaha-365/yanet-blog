@@ -9,5 +9,5 @@
   "ts-node": {
     "esm": true
   },
-  "include": ["src/**/*", "press/**/*.vue", "press/**/*.ts", "tools/**/*.ts"]
+  "include": ["docs/**/*.vue", "docs/**/*.ts"]
 }
