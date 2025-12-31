@@ -3,6 +3,7 @@ import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 import { getPlumeConfig } from './plume.config'
 import { ThemeOptions } from 'vuepress-theme-plume'
+import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics";
 
 const plumeConfig = await getPlumeConfig()
 
@@ -14,4 +15,9 @@ export default defineUserConfig({
   head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
   theme: plumeTheme(plumeConfig as ThemeOptions),
   bundler: viteBundler(),
+  plugins: [
+    googleAnalyticsPlugin({
+      id: 'G-WYQRCV8PZC',
+    })
+  ]
 })
