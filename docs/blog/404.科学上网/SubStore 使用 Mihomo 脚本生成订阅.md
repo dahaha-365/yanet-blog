@@ -4,6 +4,10 @@ tags:
   - Mihomo
   - Clash
 title: SubStore 使用 Mihomo 脚本生成订阅
+copyright:
+  creation: original
+  author:
+    name: YaNet
 createTime: 2025/12/29 01:37:05
 permalink: /blog/2ivre320/
 ---
