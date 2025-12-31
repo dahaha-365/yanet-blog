@@ -41,6 +41,10 @@ export async function getPlumeConfig() {
       }
     },
     copyright: 'CC-BY-SA-4.0',
+    copyCode: {
+      showInMobile: true,
+      inline: true,
+    },
     comment: {
       provider: 'Giscus',
       comment: true,
