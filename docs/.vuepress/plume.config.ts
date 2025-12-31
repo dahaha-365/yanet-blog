@@ -1,4 +1,3 @@
-import { defineThemeConfig } from 'vuepress-theme-plume'
 import axios from 'axios'
 import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -26,6 +25,14 @@ export async function getPlumeConfig() {
       circle: true,
     },
     copyright: 'CC-BY-SA-4.0',
+    comment: {
+      provider: 'Giscus',
+      comment: true,
+      repo: 'dahaha-365/yanet-blog',
+      repoId: 'R_kgDOQwqDaw',
+      category: '博客评论',
+      categoryId: 'DIC_kwDOQwqDa84C0aW0',
+    },
     markdown: {
       field: true,
     },
