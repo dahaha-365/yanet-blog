@@ -38,6 +38,9 @@ export async function getPlumeConfig() {
       },
       sitemap: {
         hostname: 'https://yanet.vip',
+      },
+      markdownPower: {
+        imageSize: 'all',
       }
     },
     copyright: 'CC-BY-SA-4.0',
