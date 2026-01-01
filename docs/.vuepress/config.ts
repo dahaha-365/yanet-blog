@@ -4,7 +4,6 @@ import { plumeTheme } from 'vuepress-theme-plume'
 import { getPlumeConfig } from './plume.config'
 import { ThemeOptions } from 'vuepress-theme-plume'
 import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics";
-import react from "@vitejs/plugin-react-swc";
 
 const plumeConfig = await getPlumeConfig()
 
@@ -17,9 +16,7 @@ export default defineUserConfig({
   theme: plumeTheme(plumeConfig as ThemeOptions),
   bundler: viteBundler({
     viteOptions: {
-      plugins: [
-        react()
-      ]
+      plugins: []
     }
   }),
   plugins: [

@@ -13,7 +13,7 @@ list:
     socials:
       -
         icon: github
-        link: https://github.com
+        link: https://github.com/dahaha-365
   -
     name: 音乐爱好者
     avatar: /icons/man.png
@@ -21,7 +21,7 @@ list:
     socials:
       -
         icon: spotify
-        link: https://spotify.com
+        link: https://open.spotify.com/user/31p3yy65g5c4lqdbtvg7y7vwfswe
   -
     name: 数码控
     avatar: /icons/digital.png
