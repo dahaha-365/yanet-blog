@@ -14,6 +14,7 @@
   "packageManager": "pnpm@10.26.0",
   "devDependencies": {
     "@types/node": "^25.0.3",
+    "@vitejs/plugin-react-swc": "^4.2.2",
     "@vuepress/bundler-vite": "2.0.0-rc.26",
     "@vuepress/client": "2.0.0-rc.26",
     "@vuepress/plugin-google-analytics": "2.0.0-rc.118",

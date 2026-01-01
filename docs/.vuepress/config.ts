@@ -4,6 +4,7 @@ import { plumeTheme } from 'vuepress-theme-plume'
 import { getPlumeConfig } from './plume.config'
 import { ThemeOptions } from 'vuepress-theme-plume'
 import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics";
+import react from "@vitejs/plugin-react-swc";
 
 const plumeConfig = await getPlumeConfig()
 
@@ -14,7 +15,13 @@ export default defineUserConfig({
   description: 'Yet another Internet.',
   head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
   theme: plumeTheme(plumeConfig as ThemeOptions),
-  bundler: viteBundler(),
+  bundler: viteBundler({
+    viteOptions: {
+      plugins: [
+        react()
+      ]
+    }
+  }),
   plugins: [
     googleAnalyticsPlugin({
       id: 'G-WYQRCV8PZC',
