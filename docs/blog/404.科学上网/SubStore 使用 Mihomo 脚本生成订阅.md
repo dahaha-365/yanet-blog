@@ -3,7 +3,7 @@ tags:
   - SubStore
   - Mihomo
   - Clash
-title: SubStore 使用 Mihomo 脚本生成订阅
+title: SubStore 使用 Mihomo 覆写脚本生成订阅
 copyright:
   creation: original
   author:
@@ -11,9 +11,9 @@ copyright:
 createTime: 2025/12/29 01:37:05
 permalink: /blog/2ivre320/
 ---
-[Mihomo 全局脚本](https://github.com/dahaha-365/YaNet/tree/main/Mihomo)不知不觉公开一年多了，最初是因为机场的策略分组不好用才去研究的，没想到这个小脚本也能获取几百个⭐️。
+[Mihomo 覆写脚本](https://github.com/dahaha-365/YaNet/tree/main/Mihomo)不知不觉公开一年多了，最初是因为机场的策略分组不好用才去研究的，没想到这个小脚本也能获取几百个⭐️。
 
-Mihomo 全局脚本能实现精细化的代理策略，告别机场订阅乱七八糟的分组。下图是 Clash Party 使用后的效果。
+Mihomo 覆写脚本能实现精细化的代理策略，告别机场订阅乱七八糟的分组。下图是 Clash Party 使用后的效果。通过 SubStore 直接生成覆写后的订阅文件，**不需要在软件上再运行覆写脚本**。
 
 ![Clash Party 使用效果](https://wechat-mp0766.oss-cn-chengdu.aliyuncs.com/20251230011327927.png)
 
