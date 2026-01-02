@@ -1,0 +1,4 @@
+.vp-doc p strong,
+.vp-doc p em {
+  color: var(--vp-code-color);
+}
