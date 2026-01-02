@@ -19,7 +19,7 @@ Mihomo 覆写脚本能实现精细化的代理策略，告别机场订阅乱七�
 
 喜欢的可以到项目 Github 上点个星星。
 
-<RepoCard repo="dahaha-365/YaNet" />
+<RepoCard repo="dahaha-365/YaNet" provider="github" />
 
 ## 更新了什么
 
