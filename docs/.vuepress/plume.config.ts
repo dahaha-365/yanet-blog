@@ -43,7 +43,15 @@ export async function getPlumeConfig() {
       },
       markdownPower: {
         imageSize: 'all',
+      },
+      llmstxt: {
+        llmsTxt: true,
+        llmsFullTxt: true,
+        llmsPageTxt: true,
       }
+    },
+    llmstxt: {
+      locale: '/'
     },
     copyright: 'CC-BY-SA-4.0',
     copyCode: {
