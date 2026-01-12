@@ -3,15 +3,19 @@
   color: var(--vp-code-color);
 }
 
-.vp-doc > div {
-  h1:not(.vp-doc-header),
-  h2:not(.vp-doc-header) {
-    padding-top: 0 !important;
-    margin-top: 1em !important;
-  }
+.vp-doc > div:not(.vp-doc-copyright) {
+  //h1,
+  //h2 {
+  //  padding-top: 0 !important;
+  //  margin-top: 1em !important;
+  //}
+  //
+  //h2 {
+  //  padding-top: 1em !important;
+  //}
 
   h1,
-  h2:not(.vp-doc-header),
+  h2,
   h3,
   h4,
   h5,
@@ -23,11 +27,11 @@
       content: '';
       position: absolute;
       left: -1.5em;
-      top: 0;
+      bottom: 0;
       height: 1em;
       width: 0.75em;
       background-color: var(--vp-code-color);
-      transform: translateY(0.15em);
+      transform: translateY(-0.15em);
       animation: terminal-cursor 1s step-end infinite;
     }
   }
