@@ -1,9 +1,9 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
-import { getPlumeConfig } from './plume.config'
+import { getPlumeConfig } from './plume.config.js'
 import { ThemeOptions } from 'vuepress-theme-plume'
-import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics";
+import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 
 const plumeConfig = await getPlumeConfig()
 
