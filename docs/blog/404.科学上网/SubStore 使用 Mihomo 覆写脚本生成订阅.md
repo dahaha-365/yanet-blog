@@ -70,7 +70,7 @@ Mihomo 覆写脚本能实现精细化的代理策略，告别机场订阅乱七�
 过滤高倍率节点的阈值
 :::
 
-::: field name="skipIps" type="string" optional="true" default="10.0.0.0/8;100.64.0.0/10;169.254.0.0/16;172.16.0.0/12;192.0.0.0/24;192.168.0.0/16;198.18.0.0/15;FC00::/7;FE80::/10;::1/128"
+::: field name="skipIps" type="string" optional="true" default="10.0.0.0/8;100.64.0.0/10;169.254.0.0/16;172.16.0.0/12;192.168.0.0/16;198.18.0.0/15;FC00::/7;FE80::/10;::1/128"
 应用在`sniffer['skip-src-address']`、`sniffer['skip-dst-address']`、`tun['route-exclude-address']`，在 Clash Party 里，`tun['route-exclude-address']`会被软件设置覆盖
 :::
 
