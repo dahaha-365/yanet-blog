@@ -2,3 +2,38 @@
 .vp-doc p em {
   color: var(--vp-code-color);
 }
+
+.vp-doc > div {
+  h1,
+  h2 {
+    padding-top: 0 !important;
+    margin-top: 1em !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    /*padding-left: 1.5em;*/
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -1.5em;
+      top: 0;
+      height: 1em;
+      width: 0.75em;
+      background-color: var(--vp-code-color);
+      transform: translateY(0.15em);
+      animation: terminal-cursor 1s step-end infinite;
+    }
+  }
+}
+
+@keyframes terminal-cursor {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
