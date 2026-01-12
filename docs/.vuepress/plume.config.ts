@@ -73,6 +73,7 @@ export async function getPlumeConfig() {
     },
     markdown: {
       field: true,
+      youtube: true,
     },
     social: [
       {
