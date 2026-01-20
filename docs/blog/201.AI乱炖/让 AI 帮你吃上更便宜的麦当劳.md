@@ -15,7 +15,7 @@ permalink: /blog/2ta17jhs/
 
 ![](https://wechat-mp0766.oss-cn-chengdu.aliyuncs.com/20260118000734654.png)
 
-首先打开麦当劳 MCP 平台（链接在最后）。注册一个账号。
+首先打开[麦当劳 MCP 平台](https://open.mcd.cn/mcp)。注册一个账号。
 
 ![](https://wechat-mp0766.oss-cn-chengdu.aliyuncs.com/20260118001519198.png)
 
@@ -34,3 +34,7 @@ permalink: /blog/2ta17jhs/
 提示 `Token 已保存，可以开始使用指令了。` 以后，就可以使用指令自动领取麦当劳优惠券了。
 
 @[youtube](_9-Pg3q_-qc)
+
+根据上面的视频操作，然后打开麦当劳小程序，发现优惠券已经自动领取到账号（申请麦当劳 MCP 平台的手机号码要和小程序的一致）。
+
+![](https://wechat-mp0766.oss-cn-chengdu.aliyuncs.com/20260118020134935.PNG)
