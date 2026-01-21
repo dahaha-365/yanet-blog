@@ -74,6 +74,15 @@ export async function getPlumeConfig() {
     markdown: {
       field: true,
       youtube: true,
+      fileTree: true,
+      imageSize: true,
+      image: {
+        figure: true,
+        lazyload: true,
+        mark: true,
+        size: true,
+        obsidianSize: true,
+      },
     },
     social: [
       {
