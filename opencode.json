@@ -34,6 +34,14 @@
     "install": {
       "template": "pnpm install",
       "description": "安装项目依赖"
+    },
+    "draft": {
+      "template": "git checkout draft && git pull origin draft && git merge main",
+      "description": "切换到 draft 分支并合并最新的 main 分支"
+    },
+    "publish": {
+      "template": ".opencode/scripts/publish.sh",
+      "description": "从 draft 分支发布更改到 main 分支（仅在 draft 分支可用）"
     }
   }
 }
