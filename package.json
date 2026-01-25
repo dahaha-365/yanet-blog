@@ -24,6 +24,7 @@
     "vuepress-theme-plume": "1.0.0-rc.184"
   },
   "dependencies": {
+    "@microsoft/clarity": "^1.0.2",
     "axios": "^1.13.2"
   }
 }
