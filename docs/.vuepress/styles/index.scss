@@ -42,7 +42,7 @@
   50%      { opacity: 0; }
 }
 
-// 定义颜色变量，可以根据你的 AI 主题调整
+// 颜色变量定义
 $ai-glow-color-1: #00d2ff; // 科技蓝
 $ai-glow-color-2: #92fe9d; // 极光绿
 $ai-glow-color-3: #ff52ff; // 幻彩紫
@@ -52,11 +52,14 @@ $border-radius: 12px;
 .vp-repo-card {
   position: relative;
   border-radius: $border-radius;
-  background: #1a1a1a; // 假设背景是深色，流光效果更好
   z-index: 1;
-  overflow: hidden; // 确保流光不溢出
+  overflow: hidden;
+  border: none; // 清除默认边框
 
-  // 这里的 ::before 是流光层
+  // 1. 动态背景色：自动适配 VitePress 模式
+  // 也可以手动使用 :root / .dark 变量
+  background-color: var(--vp-c-bg-soft);
+
   &::before {
     content: '';
     position: absolute;
@@ -75,23 +78,34 @@ $border-radius: 12px;
     z-index: -2;
   }
 
-  // 这里的 ::after 用来遮盖中间，只露出边框部分
   &::after {
     content: '';
     position: absolute;
-    inset: $border-width; // 往内缩进边框宽度
-    background: inherit; // 继承父级背景色
+    inset: $border-width;
     border-radius: calc(#{$border-radius} - #{$border-width});
     z-index: -1;
+    // 关键点：这里必须跟随父级背景，否则会露馅
+    background-color: var(--vp-c-bg-soft);
   }
 }
 
-// 定义旋转动画
+// 2. 针对暗黑/亮色模式微调流光亮度
+:root {
+  // 亮色模式：流光可以淡一点，避免刺眼
+  .vp-repo-card::before {
+    opacity: 0.5;
+  }
+}
+
+.dark {
+  // 暗黑模式：流光加亮，增加科技感
+  .vp-repo-card::before {
+    opacity: 1;
+    filter: blur(2px); // 暗色下加点模糊会有霓虹感
+  }
+}
+
 @keyframes rotate-glow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
