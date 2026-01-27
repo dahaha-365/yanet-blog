@@ -41,3 +41,57 @@
   0%, 100% { opacity: 1; }
   50%      { opacity: 0; }
 }
+
+// 定义颜色变量，可以根据你的 AI 主题调整
+$ai-glow-color-1: #00d2ff; // 科技蓝
+$ai-glow-color-2: #92fe9d; // 极光绿
+$ai-glow-color-3: #ff52ff; // 幻彩紫
+$border-width: 2px;
+$border-radius: 12px;
+
+.vp-repo-card {
+  position: relative;
+  border-radius: $border-radius;
+  background: #1a1a1a; // 假设背景是深色，流光效果更好
+  z-index: 1;
+  overflow: hidden; // 确保流光不溢出
+
+  // 这里的 ::before 是流光层
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent,
+        $ai-glow-color-1,
+        $ai-glow-color-2,
+        $ai-glow-color-3,
+        transparent 30%
+    );
+    animation: rotate-glow 4s linear infinite;
+    z-index: -2;
+  }
+
+  // 这里的 ::after 用来遮盖中间，只露出边框部分
+  &::after {
+    content: '';
+    position: absolute;
+    inset: $border-width; // 往内缩进边框宽度
+    background: inherit; // 继承父级背景色
+    border-radius: calc(#{$border-radius} - #{$border-width});
+    z-index: -1;
+  }
+}
+
+// 定义旋转动画
+@keyframes rotate-glow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
