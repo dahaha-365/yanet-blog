@@ -3,8 +3,11 @@ import { defineClientConfig } from '@vuepress/client'
 import { h } from 'vue'
 import PageContextMenu from 'vuepress-theme-plume/features/PageContextMenu.vue'
 import { Layout } from 'vuepress-theme-plume/client'
+import Clarity from "@microsoft/clarity";
 
 import './styles/index.scss'
+
+Clarity.init('v6qyparhlu');
 
 export default defineClientConfig({
   enhance({ app }) {
